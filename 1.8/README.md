@@ -1,12 +1,12 @@
 Nginx 1.8 server and a reverse proxy server docker image
 ========================================================
 
-The `centos/rh-nginx-18-centos7` image provides an nginx 1.8 server and a reverse proxy server. The image can be used as a base image for other applications based on nginx 1.8 web server.
+The `thedigitalgarage/nginx-18-centos7` image provides an nginx 1.8 server and a reverse proxy server. The image can be used as a base image for other applications based on nginx 1.8 web server.
 
 
-To pull the `centos/rh-nginx-18-centos7` image, run the following command as root:
+To pull the `thedigitalgarage/nginx-18-centos7` image, run the following command as root:
 ```
-docker pull centos/rh-nginx-18-centos7
+docker pull thedigitalgarage/nginx-18-centos7
 ```
 
 
