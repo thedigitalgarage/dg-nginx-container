@@ -11,15 +11,31 @@ FROM centos:centos7
 EXPOSE 80
 EXPOSE 443
 
-LABEL io.k8s.description="Platform for running nginx or building nginx-based application" \
+ENV NGINX_VERSION=1.10
+
+ENV SUMMARY="Platform for running nginx $NGINX_VERSION or building nginx-based application" \
+    DESCRIPTION="Nginx is a web server and a reverse proxy server for HTTP, SMTP, POP3 and IMAP \
+protocols, with a strong focus on high concurrency, performance and low memory usage. The container \
+image provides a containerized packaging of the nginx $NGINX_VERSION daemon. The image can be used \
+as a base image for other applications based on nginx $NGINX_VERSION web server. \
+Nginx server image can be extended using source-to-image tool."
+
+LABEL summary="$SUMMARY" \
+      description="$DESCRIPTION" \
+      io.k8s.description="DESCRIPTION" \
       io.k8s.display-name="Nginx 1.6" \
       io.openshift.expose-services="80:http" \
       io.openshift.expose-services="443:https" \
-      io.openshift.tags="builder,nginx,nginx16"
+      io.openshift.tags="builder,nginx,nginx16" \
+      com.redhat.component="rh-nginx16-docker" \
+      name="centos/nginx-16-centos7" \
+      version="1.6" \
+      release="1"
 
 COPY run-*.sh /usr/local/bin/
-RUN mkdir -p /var/lib/nginx16
-COPY contrib /var/lib/nginx16/
+
+# Copy extra files to the image.
+COPY ./root/ /
 
 RUN yum install -y centos-release-scl-rh && \
     INSTALL_PKGS="bind-utils nginx16 nginx16-nginx" && \
