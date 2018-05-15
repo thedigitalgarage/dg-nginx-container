@@ -1,4 +1,4 @@
-Nginx 1.8 server and a reverse proxy server Docker image
+Nginx 1.8 server and a reverse proxy server container image
 ========================================================
 
 The `thedigitalgarage/nginx-18-centos7` image provides an nginx 1.8 server and a reverse proxy server. The image can be used as a base image for other applications based on nginx 1.8 web server.

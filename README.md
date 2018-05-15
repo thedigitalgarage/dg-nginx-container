@@ -1,4 +1,4 @@
-Nginx Docker images
+Nginx container images
 ===================
 
 This repository contains Dockerfiles for Nginx images for OpenShift.
@@ -6,7 +6,7 @@ Users can choose between RHEL and CentOS based images.
 
 For more information about contributing, see
 [the Contribution Guidelines](https://github.com/sclorg/welcome/blob/master/contribution.md).
-For more information about concepts used in these docker images, see the
+For more information about concepts used in these container images, see the
 [Landing page](https://github.com/sclorg/welcome).
 
 
@@ -30,7 +30,8 @@ Choose either the CentOS7 or RHEL7 based image:
 
 *  **RHEL7 based image**
 
-    This image is available in Red Hat Container Registry. To download it run:
+    These images are available in the [Red Hat Container Catalog](https://access.redhat.com/containers/#/registry.access.redhat.com/rhscl/nginx-112-rhel7).
+    To download it run:
 
     ```
     $ docker pull registry.access.redhat.com/rhscl/nginx-112-rhel7
